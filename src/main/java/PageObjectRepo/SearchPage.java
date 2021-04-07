@@ -25,6 +25,9 @@ public class SearchPage {
 	@FindBy(id="error-empty-query")
 	private WebElement emptyQueryErrorMessage;
 	
+	@FindBy(id="search-results")
+	private List<WebElement> resultsTable;
+	
 	
 	
 	public WebElement getEmptyQueryErrorMessage() {
