@@ -19,9 +19,25 @@ public class SearchPage {
 	@FindBy(id="search-input")
 	private WebElement searchInputField;
 	
+	@FindBy(id="search-button")
+	private WebElement searchButton;
+
 	
 	
 	
+	
+	public WebElement getSearchButton() {
+    	wait.until(ExpectedConditions.elementToBeClickable(searchButton));
+
+		return searchButton;
+	}
+
+
+	public void setSearchButton(WebElement searchButton) {
+		this.searchButton = searchButton;
+	}
+
+
 	public SearchPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
