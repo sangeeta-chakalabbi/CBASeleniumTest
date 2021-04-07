@@ -22,15 +22,32 @@ public class SearchPage {
 	@FindBy(id="search-button")
 	private WebElement searchButton;
 
+	@FindBy(id="error-empty-query")
+	private WebElement emptyQueryErrorMessage;
 	
 	
 	
-	
+	public WebElement getEmptyQueryErrorMessage() {
+		return emptyQueryErrorMessage;
+	}
+
+
+
+
+	public void setEmptyQueryErrorMessage(WebElement emptyQueryErrorMessage) {
+		this.emptyQueryErrorMessage = emptyQueryErrorMessage;
+	}
+
+
+
+
 	public WebElement getSearchButton() {
     	wait.until(ExpectedConditions.elementToBeClickable(searchButton));
 
 		return searchButton;
 	}
+	
+	
 
 
 	public void setSearchButton(WebElement searchButton) {

@@ -31,6 +31,15 @@ public class SearchTest extends SetUp {
 		Assert.assertTrue(searchPage.getSearchButton().isDisplayed());
 	}
 	
+	@Test
+	public void test_emptySearchStringDisplaysError() {
+		String empty="";
+		String expectedErrorMessage = "Provide some query";
+		searchPage.getSearchInputField().sendKeys(empty);
+		String actualErrorMessage = searchPage.getEmptyQueryErrorMessage().getText();
+		Assert.assertEquals(actualErrorMessage, "expectedErrorMessage");
+	}
+	
 	
 	
 	@AfterMethod
